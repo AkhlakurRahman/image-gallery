@@ -5,15 +5,18 @@
 				<a href="/">Image Gallery</a>
 			</div>
 			<div class="links">
-				<a href="#">Log in</a>
+				<a href="#" @click="login">Log in</a>
 			</div>
 		</nav>
 	</header>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
-	name: 'Header'
+	name: 'Header',
+	methods: mapActions(['login'])
 };
 </script>
 
