@@ -2,21 +2,27 @@
 	<header class="header">
 		<nav class="navbar">
 			<div class="logo">
-				<a href="/">Image Gallery</a>
+				<router-link to="/">Image Gallery</router-link>
 			</div>
 			<div class="links">
-				<a href="#" @click="login">Log in</a>
+				<div class="after-login" v-if="isLoggedIn">
+					<router-link to="/">Galleries</router-link>
+					<router-link to="/upload-image">Upload</router-link>
+					<a href="#" @click="logout">Logout</a>
+				</div>
+				<a v-else href="#" @click="login">Log in</a>
 			</div>
 		</nav>
 	</header>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
 	name: 'Header',
-	methods: mapActions(['login'])
+	methods: mapActions(['login', 'logout']),
+	computed: mapGetters(['isLoggedIn'])
 };
 </script>
 
