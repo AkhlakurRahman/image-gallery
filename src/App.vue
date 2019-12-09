@@ -1,7 +1,9 @@
 <template>
 	<div id="app">
 		<Header />
-		<router-view></router-view>
+		<div class="container">
+			<router-view></router-view>
+		</div>
 	</div>
 </template>
 
@@ -47,5 +49,6 @@ a {
 
 .container {
 	max-width: 110rem;
+	margin: 0 auto;
 }
 </style>
