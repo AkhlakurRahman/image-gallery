@@ -1,6 +1,11 @@
 <template>
 	<div class="drag-drop">
-		<input type="file" />
+		<input
+			type="file"
+			@change="uploadImages($event.target.files)"
+			multiple
+			accept="image/*"
+		/>
 		<span>Drag images here</span>
 	</div>
 </template>
@@ -24,6 +29,7 @@ export default {
 	align-items: center;
 	justify-content: center;
 	position: relative;
+	transition: all 0.2s;
 }
 
 .drag-drop:hover {
