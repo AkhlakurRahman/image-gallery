@@ -1,4 +1,5 @@
 import qs from 'qs';
+import axios from 'axios';
 
 export default {
 	login() {
@@ -9,5 +10,13 @@ export default {
 		window.location = `${
 			process.env.VUE_APP_ROOT_URL
 		}/oauth2/authorize?${qs.stringify(querystring)}`;
+	},
+
+	fetchImages(token) {
+		return axios.get(`${process.env.VUE_APP_ROOT_URL}/3/account/me/images`, {
+			headers: {
+				Authorization: `Bearer ${token}`
+			}
+		});
 	}
 };
