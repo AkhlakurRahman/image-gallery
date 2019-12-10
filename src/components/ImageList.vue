@@ -24,18 +24,14 @@ export default {
 
 <style scoped>
 .image-container {
-	/* display: grid;
-	grid-template-rows: repeat(3, 1fr);
-	grid-column-gap: 1.1rem;
-	grid-row-gap: 5rem;
-	margin-top: 8rem; */
-	grid-template-columns: repeat(3, 1fr);
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 	margin-top: 8rem;
 }
 
 .image-container img {
-	max-width: 35.2rem;
-	height: auto;
-	padding: 1rem;
+	width: 50rem;
+	height: 30rem;
+	margin-bottom: 2rem;
 }
 </style>
